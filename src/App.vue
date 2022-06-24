@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { ref  } from 'vue';
+import { reactive  } from 'vue';
 export default {
 
   setup(){
@@ -21,18 +21,16 @@ export default {
     // const courseGoal = ref('Learn Vue and build amazing projects')
     // const visibility = ref(true)
 
-    const myGoals = ref({
+    const myGoals = reactive({
       courseGoal: 'Learn Vue and build amazing projects' ,
       visibility : true
     })
 
     function toggleGoal() {
-      myGoals.value.visibility = !myGoals.value.visibility
+      myGoals.visibility = !myGoals.visibility
     }
 
-    return { 
-      courseGoal: myGoals.value.courseGoal, 
-      visibility: myGoals.value.visibility , 
+    return {      
       myGoals ,
       toggleGoal
        }
